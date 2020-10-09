@@ -38,6 +38,7 @@
 
 #include <com/sun/star/table/XCell.hpp>
 #include <com/sun/star/table/TableBorder.hpp>
+#include <com/sun/star/table/XTableRows.hpp>
 
 #include <cppuhelper/supportsservice.hxx>
 #include <cppuhelper/bootstrap.hxx>
@@ -63,11 +64,11 @@ void TransposeTable(Reference<XTextTable>& xTable) {
     Reference<XTextTableCursor> cur = xTable->createCursorByCellName(OUString::createFromAscii("A1"));
 
     size_t columns = 1;
+    size_t row = 1;
+
     while (cur->goDown(1, false)) {
         columns++;
     }
-
-    size_t row = 1;
     while (cur->goRight(1, false)) {
         row++;
     }
@@ -75,16 +76,16 @@ void TransposeTable(Reference<XTextTable>& xTable) {
     size_t n = std::min(row, columns);
     for (size_t y = 0; y < n; y++) {
         for (size_t x = y; x < n; x++) {
-            std::string coord1;
-            coord1 += (char) ('A' + x);
-            coord1 += std::to_string(y + 1);
+            std::string xCoord_1;
+            xCoord_1 += (char) ('A' + x);
+            xCoord_1 += std::to_string(y + 1);
 
-            std::string coord2;
-            coord2 += (char) ('A' + y);
-            coord2 += std::to_string(x + 1);
+            std::string xCoord_2;
+            xCoord_2 += (char) ('A' + y);
+            xCoord_2 += std::to_string(x + 1);
 
-            Reference<XCell> xCell_1 = xTable->getCellByName(OUString::createFromAscii(coord1.c_str()));
-            Reference<XCell> xCell_2 = xTable->getCellByName(OUString::createFromAscii(coord2.c_str()));
+            Reference<XCell> xCell_1 = xTable->getCellByName(OUString::createFromAscii(xCoord_1.c_str()));
+            Reference<XCell> xCell_2 = xTable->getCellByName(OUString::createFromAscii(xCoord_2.c_str()));
             Reference<XText> xTextCell_1(xCell_1, UNO_QUERY);
             Reference<XText> xTextCell_2(xCell_2, UNO_QUERY);
             OUString tmp = xTextCell_1->getString();
@@ -100,18 +101,14 @@ void TransposeAllDocument(Reference<XFrame>& rxFrame) {
     Reference<XTextTablesSupplier> xTables(xTextDocument, UNO_QUERY);
     Reference<XNameAccess> arTables = xTables->getTextTables();
 
-    auto names = arTables->getElementNames();
-    for (auto& i : names) {
+    auto tables = arTables->getElementNames();
+    for (auto& i : tables) {
         auto tmp = arTables->getByName(i);
         Reference<XTextTable> xTable;
         tmp >>= xTable;
 
         TransposeTable(xTable);
     }
-}
-
-void TransposeTables(Reference<XFrame> &rxFrame, Reference<XComponentContext>& rxContext) {
-    TransposeAllDocument(rxFrame);
 }
 
 void CreateNewTable(Reference<XFrame> &rxFrame, Reference<XComponentContext>& rxContext) {
@@ -128,12 +125,12 @@ void CreateNewTable(Reference<XFrame> &rxFrame, Reference<XComponentContext>& rx
     Reference<XText> xText = xTextDocument->getText();
     Reference<XTextCursor> xTextCursor = xText->createTextCursor();
 
-    std::srand(std::time(0));
-    size_t countTable = 2 + std::rand() % 7;
+    std::srand(std::time(NULL));
+    size_t countTable = std::rand() % 7 + 2;
     for (size_t i = 0; i < countTable; i++) {
         xTextCursor->gotoEnd(false);
-
-        std::string s = std::to_string(i + 1);
+        std::string s = std::string("\n").append(std::to_string(i + 1));
+        s.append("\n");
         xTextCursor->setString(OUString::createFromAscii(s.c_str()));
 
         Reference<XMultiServiceFactory> oDocMSF(xTextDocument, UNO_QUERY);
@@ -143,10 +140,14 @@ void CreateNewTable(Reference<XFrame> &rxFrame, Reference<XComponentContext>& rx
         size_t columns = 3 + std::rand() % 4;
         xTable->initialize(rows, columns);
         Reference<XTextContent> xTextContent(xTable, UNO_QUERY);
+        // Any prop;
+        // Reference<XTableRows> xTableRows = xTable->getRows();
+        // Reference<XIndexAccess> theRows (xTableRows,UNO_QUERY);
+        // Reference<XPropertySet> xRowProps (theRows->getByIndex((short)0),UNO_QUERY);
+        // prop <<= (sal_Bool)false;
+        // xRowProps->setPropertyValue(OUString::createFromAscii("BackTransparent"),prop);
 
-        // Insert the table into the document
         xText->insertTextContent(xText->getEnd(), xTextContent, (unsigned char) 0);
-
         for (size_t y = 0; y < rows; y++) {
             for (size_t x = 0; x < columns; x++) {
                 std::string index;
@@ -169,7 +170,7 @@ void CreateNewTable(Reference<XFrame> &rxFrame, Reference<XComponentContext>& rx
 void SAL_CALL AddonDispatchImpl::dispatch(const URL& aURL, const Sequence <PropertyValue>& lArgs) throw (RuntimeException) {
     if (aURL.Protocol.equalsAscii("inco.niocs.test.protocolhandler:")) {
         if (aURL.Path.equalsAscii("Transpose")) {
-            TransposeTables(mxFrame, mxContext);
+            TransposeAllDocument(mxFrame);
         } else if (aURL.Path.equalsAscii("Insert")) {
             CreateNewTable(mxFrame, mxContext);
         }
