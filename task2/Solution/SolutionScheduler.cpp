@@ -11,16 +11,16 @@
 #define ll long long
 
 
-Runner* Runner::runnerInstance= 0;
+Runner* Runner::runnerInstance = 0;
 
 //TODO: change .csv to .xml
 Runner::Runner(const std::string& path) {
     tinyxml2::XMLDocument doc;
     doc.LoadFile(path.c_str());
     size_t numTask = std::atoi(doc.FirstChildElement("Task")->FirstChildElement("Num")->GetText());
-    std::string time(doc.FirstChildElement("Task")->FirstChildElement("Time")->GetText());
+    std::string workTime(doc.FirstChildElement("Task")->FirstChildElement("Time")->GetText());
     value.resize(numTask);
-    std::stringstream ss(time);
+    std::stringstream ss(workTime);
     for (auto& i : value) {
          ss >> i;
     }

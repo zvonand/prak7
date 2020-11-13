@@ -1,0 +1,292 @@
+Worst temperature model: Bolzman
+Cauchy law
+
+Elapsed time: | Deviation: |
+threads: 1 tasks: 50000 procs: 10 
+        17429       33.206
+
+threads: 1 tasks: 50000 procs: 25 
+        17146      33.1914
+
+threads: 1 tasks: 50000 procs: 50 
+        18575      33.2564
+
+threads: 1 tasks: 100000 procs: 10 
+        34951      32.8998
+
+threads: 1 tasks: 100000 procs: 25 
+        33607      33.0624
+
+threads: 1 tasks: 100000 procs: 50 
+        32987      32.9838
+
+threads: 1 tasks: 150000 procs: 10 
+        53587      33.0274
+
+threads: 1 tasks: 150000 procs: 25 
+        52412      32.9331
+
+threads: 1 tasks: 150000 procs: 50 
+        51635      33.0349
+
+threads: 1 tasks: 200000 procs: 10 
+        73373      33.0564
+
+threads: 1 tasks: 200000 procs: 25 
+        71843      32.9652
+
+threads: 1 tasks: 200000 procs: 50 
+        69520      32.9985
+
+threads: 2 tasks: 50000 procs: 10 
+        17640      33.0549
+
+threads: 2 tasks: 50000 procs: 25 
+        17235      32.9223
+
+threads: 2 tasks: 50000 procs: 50 
+        17132      32.9384
+
+threads: 2 tasks: 100000 procs: 10 
+        37961      33.1424
+
+threads: 2 tasks: 100000 procs: 25 
+        36578      32.9798
+
+threads: 2 tasks: 100000 procs: 50 
+        35981      32.9016
+
+threads: 2 tasks: 150000 procs: 10 
+        60094      33.0051
+
+threads: 2 tasks: 150000 procs: 25 
+        58355      32.9798
+
+threads: 2 tasks: 150000 procs: 50 
+        55954      33.1054
+
+threads: 2 tasks: 200000 procs: 10 
+        77047      33.0661
+
+threads: 2 tasks: 200000 procs: 25 
+        81784      32.9426
+
+threads: 2 tasks: 200000 procs: 50 
+        78473      33.0532
+
+threads: 3 tasks: 50000 procs: 10 
+        22758      33.1326
+
+threads: 3 tasks: 50000 procs: 25 
+        22072      32.9711
+
+threads: 3 tasks: 50000 procs: 50 
+        21933      32.8233
+
+threads: 3 tasks: 100000 procs: 10 
+        51524      32.9627
+
+threads: 3 tasks: 100000 procs: 25 
+        50501      32.9261
+
+threads: 3 tasks: 100000 procs: 50 
+        50471      32.9201
+
+threads: 3 tasks: 150000 procs: 10 
+        88068      33.0377
+
+threads: 3 tasks: 150000 procs: 25 
+        85436      33.0502
+
+threads: 3 tasks: 150000 procs: 50 
+        82159      33.0071
+
+threads: 3 tasks: 200000 procs: 10 
+       125240      32.9614
+
+threads: 3 tasks: 200000 procs: 25 
+       126123      32.9888
+
+threads: 3 tasks: 200000 procs: 50 
+       120561      32.9942
+
+threads: 4 tasks: 50000 procs: 10 
+        26750       33.022
+
+threads: 4 tasks: 50000 procs: 25 
+        26212      33.0363
+
+threads: 4 tasks: 50000 procs: 50 
+        25986      32.9852
+
+threads: 4 tasks: 100000 procs: 10 
+        74768      33.0423
+
+threads: 4 tasks: 100000 procs: 25 
+        74864      33.1184
+
+threads: 4 tasks: 100000 procs: 50 
+        72916      32.9075
+
+threads: 4 tasks: 150000 procs: 10 
+       125522      33.0149
+
+threads: 4 tasks: 150000 procs: 25 
+       117721      33.0027
+
+threads: 4 tasks: 150000 procs: 50 
+       123138      33.1527
+
+threads: 4 tasks: 200000 procs: 10 
+       174514      33.0096
+
+threads: 4 tasks: 200000 procs: 25 
+       171566      33.0555
+
+threads: 4 tasks: 200000 procs: 50 
+       171019      32.9613
+
+threads: 6 tasks: 50000 procs: 10 
+        39610       32.946
+
+threads: 6 tasks: 50000 procs: 25 
+        39917      33.1586
+
+threads: 6 tasks: 50000 procs: 50 
+        39801      33.0237
+
+threads: 6 tasks: 100000 procs: 10 
+       113249      32.9942
+
+threads: 6 tasks: 100000 procs: 25 
+       113030      32.8984
+
+threads: 6 tasks: 100000 procs: 50 
+       111476      32.9896
+
+threads: 6 tasks: 150000 procs: 10 
+       188354      33.0566
+
+threads: 6 tasks: 150000 procs: 25 
+       186598      32.9743
+
+threads: 6 tasks: 150000 procs: 50 
+       186768      33.0015
+
+threads: 6 tasks: 200000 procs: 10 
+       265722      32.9916
+
+threads: 6 tasks: 200000 procs: 25 
+       251587      33.0542
+
+threads: 6 tasks: 200000 procs: 50 
+       259571      33.1047
+
+threads: 8 tasks: 50000 procs: 10 
+        53927         32.8
+
+threads: 8 tasks: 50000 procs: 25 
+        53547      33.0577
+
+threads: 8 tasks: 50000 procs: 50 
+        54170      32.9743
+
+threads: 8 tasks: 100000 procs: 10 
+       171241      32.9136
+
+threads: 8 tasks: 100000 procs: 25 
+       166386      32.9228
+
+threads: 8 tasks: 100000 procs: 50 
+       152774      33.0359
+
+threads: 8 tasks: 150000 procs: 10 
+       257854      33.0141
+
+threads: 8 tasks: 150000 procs: 25 
+       252169      33.0752
+
+threads: 8 tasks: 150000 procs: 50 
+       252925      33.0744
+
+threads: 8 tasks: 200000 procs: 10 
+       359380      33.0882
+
+threads: 8 tasks: 200000 procs: 25 
+       339431       33.086
+
+threads: 8 tasks: 200000 procs: 50 
+       350600      33.0739
+
+threads: 12 tasks: 50000 procs: 10 
+        81160      33.0047
+
+threads: 12 tasks: 50000 procs: 25 
+        81128      32.8458
+
+threads: 12 tasks: 50000 procs: 50 
+        82438      33.0704
+
+threads: 12 tasks: 100000 procs: 10 
+       230313      32.9469
+
+threads: 12 tasks: 100000 procs: 25 
+       231414      32.9415
+
+threads: 12 tasks: 100000 procs: 50 
+       229276      33.0083
+
+threads: 12 tasks: 150000 procs: 10 
+       388249      32.9948
+
+threads: 12 tasks: 150000 procs: 25 
+       368272      33.2401
+
+threads: 12 tasks: 150000 procs: 50 
+       386223      33.0384
+
+threads: 12 tasks: 200000 procs: 10 
+       520822      32.9215
+
+threads: 12 tasks: 200000 procs: 25 
+       516852      32.9957
+
+threads: 12 tasks: 200000 procs: 50 
+       519722      32.9683
+
+threads: 16 tasks: 50000 procs: 10 
+       108723      33.1645
+
+threads: 16 tasks: 50000 procs: 25 
+       107886      32.9936
+
+threads: 16 tasks: 50000 procs: 50 
+       109436      33.0088
+
+threads: 16 tasks: 100000 procs: 10 
+       308495      33.0595
+
+threads: 16 tasks: 100000 procs: 25 
+       310894      33.0274
+
+threads: 16 tasks: 100000 procs: 50 
+       312435      33.0708
+
+threads: 16 tasks: 150000 procs: 10 
+       514003      33.0815
+
+threads: 16 tasks: 150000 procs: 25 
+       510922      33.0252
+
+threads: 16 tasks: 150000 procs: 50 
+       512593      32.9396
+
+threads: 16 tasks: 200000 procs: 10 
+       717935      33.0492
+
+threads: 16 tasks: 200000 procs: 25 
+       708210      32.9675
+
+threads: 16 tasks: 200000 procs: 50 
+       704233      32.9924
+

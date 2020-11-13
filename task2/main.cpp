@@ -13,28 +13,42 @@
 #include "MutationScheduler.h"
 
 # define ll long long
+#define debug
 
 // In global scope to hold it in one place to easily modify if needed
 const double INIT_TEMPERATURE = 10E5;
 const size_t MAX_ITER_WO_UPDATE = 10;
 
 
-void logger(SolutionScheduler* ans, ll elapsed_ms) {
+void logger(SolutionScheduler* ans, ll timeElapsed, const char* fname) {
     tinyxml2::XMLDocument doc;
-    doc.LoadFile("test.xml");
-    ll answer = std::atol(doc.FirstChildElement("Answer")->GetText());
+    doc.LoadFile(fname);
+    ll precalcAnswer = std::atol(doc.FirstChildElement("Answer")->GetText());
 
-    std::cout << std::setw(13) << elapsed_ms
-    << std::setw(13) << (((ans->getEnergy() - answer) * 100.0 / ans->getEnergy()))
+    std::cout << std::setw(13) << timeElapsed
+              << std::setw(13) << (((ans->getEnergy() - precalcAnswer) * 100.0 / ans->getEnergy()))
 //  << " |" << std::setw(13) << ans->getEnergy() << " / " << answer
     << std::endl;
+
+#ifdef debug
+    Runner* tasks = Runner::getInstance("");
+    for (const auto& i : ans->getAns()) {
+        for (const auto& j : i) {
+            std::cout << (*tasks)[j] << " ";
+        }
+        std::cout << std::endl;
+    }
+#endif
 }
 
-void multiThread(size_t numThreads) {
+
+void multiThread(size_t numThreads, const char* fname) {
     SolutionScheduler* ans = 0;
+
+    
     std::vector<AnnealingSim<SolutionScheduler, MutationScheduler, Temp2>> solvers;
     for (size_t i = 0; i < numThreads; i++) {
-        solvers.emplace_back("test.xml", INIT_TEMPERATURE);
+        solvers.emplace_back(fname, INIT_TEMPERATURE);
     }
     auto startTime = std::chrono::steady_clock::now();
 
@@ -69,14 +83,12 @@ void multiThread(size_t numThreads) {
     }
 
     auto endTime = std::chrono::steady_clock::now();
-    logger(ans, std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count());
+    logger(ans, std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count(), fname);
 }
 
 int main(int argc, char *argv[]) {
     size_t numThreads = (argc == 2) ? std::atoi(argv[1]) : std::thread::hardware_concurrency();
     // std::cout << "Threads: " << numThreads << std::endl;
-
-    multiThread(numThreads);
-
+    multiThread(numThreads, "../test.xml");
     return 0;
 }
