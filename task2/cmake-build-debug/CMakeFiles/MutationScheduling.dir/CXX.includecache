@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Solution/SolutionScheduler.h
+SolutionVirtClass.h
+../Solution/SolutionVirtClass.h
+vector
+-
+string
+-
+
+../Solution/SolutionVirtClass.h
+
+/home/master/prak7/task2/Mutation/MutationScheduler.cpp
+MutationScheduler.h
+/home/master/prak7/task2/Mutation/MutationScheduler.h
+SolutionScheduler.h
+/home/master/prak7/task2/Mutation/SolutionScheduler.h
+iostream
+-
+random
+-
+chrono
+-
+
+/home/master/prak7/task2/Mutation/MutationScheduler.h
+MutationVirtClass.h
+/home/master/prak7/task2/Mutation/MutationVirtClass.h
+
+/home/master/prak7/task2/Mutation/MutationVirtClass.h
+SolutionVirtClass.h
+/home/master/prak7/task2/Mutation/SolutionVirtClass.h
+

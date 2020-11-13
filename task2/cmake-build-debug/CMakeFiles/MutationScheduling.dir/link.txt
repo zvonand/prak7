@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMutationScheduling.a  CMakeFiles/MutationScheduling.dir/Mutation/MutationScheduler.cpp.o
+/usr/bin/ranlib libMutationScheduling.a

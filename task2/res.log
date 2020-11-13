@@ -1,0 +1,47 @@
+Elapsed time: | Deviation: | 
+threads: 1 tasks: 50000 procs: 10 
+        17429       33.206
+
+threads: 1 tasks: 50000 procs: 25 
+        17146      33.1914
+
+threads: 1 tasks: 50000 procs: 50 
+        18575      33.2564
+
+threads: 1 tasks: 100000 procs: 10 
+        34951      32.8998
+
+threads: 1 tasks: 100000 procs: 25 
+        33607      33.0624
+
+threads: 1 tasks: 100000 procs: 50 
+        32987      32.9838
+
+threads: 1 tasks: 150000 procs: 10 
+        53587      33.0274
+
+threads: 1 tasks: 150000 procs: 25 
+        52412      32.9331
+
+threads: 1 tasks: 150000 procs: 50 
+        51635      33.0349
+
+threads: 1 tasks: 200000 procs: 10 
+        73373      33.0564
+
+threads: 1 tasks: 200000 procs: 25 
+        71843      32.9652
+
+threads: 1 tasks: 200000 procs: 50 
+        69520      32.9985
+
+threads: 2 tasks: 50000 procs: 10 
+        17640      33.0549
+
+threads: 2 tasks: 50000 procs: 25 
+        17235      32.9223
+
+threads: 2 tasks: 50000 procs: 50 
+        17132      32.9384
+
+threads: 2 tasks: 100000 procs: 10 

@@ -1,0 +1,3 @@
+/home/master/prak7/task2/ParamsGenerator/build/CMakeFiles/rebuild_cache.dir
+/home/master/prak7/task2/ParamsGenerator/build/CMakeFiles/edit_cache.dir
+/home/master/prak7/task2/ParamsGenerator/build/CMakeFiles/ParamsGenerator.dir

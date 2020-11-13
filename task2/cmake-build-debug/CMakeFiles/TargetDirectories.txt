@@ -1,0 +1,6 @@
+/home/master/prak7/task2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/master/prak7/task2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/master/prak7/task2/cmake-build-debug/CMakeFiles/SolutionScheduling.dir
+/home/master/prak7/task2/cmake-build-debug/CMakeFiles/MutationScheduling.dir
+/home/master/prak7/task2/cmake-build-debug/CMakeFiles/XMLParse.dir
+/home/master/prak7/task2/cmake-build-debug/CMakeFiles/task2.dir

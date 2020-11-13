@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/master/prak7/task2/ParamsGenerator/main.cpp
+iostream
+-
+fstream
+-
+random
+-
+chrono
+-
+vector
+-
+algorithm
+-
+

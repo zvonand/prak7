@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -pthread -O3 -g   CMakeFiles/task2.dir/main.cpp.o  -o task2  libSolutionScheduling.a libMutationScheduling.a libXMLParse.a 

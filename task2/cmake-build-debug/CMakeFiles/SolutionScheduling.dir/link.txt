@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSolutionScheduling.a  CMakeFiles/SolutionScheduling.dir/Solution/SolutionScheduler.cpp.o
+/usr/bin/ranlib libSolutionScheduling.a
