@@ -13,7 +13,6 @@
 #include "MutationScheduler.h"
 
 # define ll long long
-#define debug
 
 // In global scope to hold it in one place to easily modify if needed
 const double INIT_TEMPERATURE = 10E5;
@@ -27,7 +26,7 @@ void logger(SolutionScheduler* ans, ll timeElapsed, const char* fname) {
 
     std::cout << std::setw(13) << timeElapsed
               << std::setw(13) << (((ans->getEnergy() - precalcAnswer) * 100.0 / ans->getEnergy()))
-//  << " |" << std::setw(13) << ans->getEnergy() << " / " << answer
+  << " |" << std::setw(13) << ans->getEnergy() << " / " << precalcAnswer
     << std::endl;
 
 #ifdef debug
@@ -44,9 +43,7 @@ void logger(SolutionScheduler* ans, ll timeElapsed, const char* fname) {
 
 void multiThread(size_t numThreads, const char* fname) {
     SolutionScheduler* ans = 0;
-
-    
-    std::vector<AnnealingSim<SolutionScheduler, MutationScheduler, Temp2>> solvers;
+    std::vector<AnnealingSim<SolutionScheduler, MutationScheduler, Temp1>> solvers;
     for (size_t i = 0; i < numThreads; i++) {
         solvers.emplace_back(fname, INIT_TEMPERATURE);
     }
@@ -64,7 +61,6 @@ void multiThread(size_t numThreads, const char* fname) {
             thread.join();
         }
 
-        //vergleich die Loesung
         if (!ans) {
             ans = dynamic_cast<SolutionScheduler*>(solvers[0].getSolution());
         }

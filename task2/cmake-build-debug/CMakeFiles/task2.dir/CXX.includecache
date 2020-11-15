@@ -23,6 +23,8 @@ cmath
 -
 iostream
 -
+SolutionScheduler.h
+-
 
 ../Mutation/MutationScheduler.h
 MutationVirtClass.h

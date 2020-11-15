@@ -7,6 +7,7 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
+#include <SolutionScheduler.h>
 
 template<class Sol, class Mut, class TempFlowModel>
 class AnnealingSim {
