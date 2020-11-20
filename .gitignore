@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+_instances/
+*.log
+result.md
+.idea/
+cov.md
+cov.html
+diff.txt
+

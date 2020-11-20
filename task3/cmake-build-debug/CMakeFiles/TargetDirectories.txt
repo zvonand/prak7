@@ -1,0 +1,3 @@
+/home/master/prak7/task3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/master/prak7/task3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/master/prak7/task3/cmake-build-debug/CMakeFiles/funcFactory.dir
