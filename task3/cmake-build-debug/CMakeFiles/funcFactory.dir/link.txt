@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfuncFactory.a  CMakeFiles/funcFactory.dir/library.cpp.o CMakeFiles/funcFactory.dir/Function/Function.cpp.o
-/usr/bin/ranlib libfuncFactory.a

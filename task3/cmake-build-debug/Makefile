@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/master/prak7/task3
+CMAKE_SOURCE_DIR = /Users/zvonand/workspace/prak7/t3_exec
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/master/prak7/task3/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/master/prak7/task3/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/master/prak7/task3/cmake-build-debug/CMakeFiles /home/master/prak7/task3/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug/CMakeFiles /Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/master/prak7/task3/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,71 +131,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named funcFactory
+# Target rules for targets named main
 
 # Build rule for target.
-funcFactory: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 funcFactory
-.PHONY : funcFactory
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-funcFactory/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/funcFactory.dir/build.make CMakeFiles/funcFactory.dir/build
-.PHONY : funcFactory/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
-Function/Function.o: Function/Function.cpp.o
+main.o: main.cpp.o
 
-.PHONY : Function/Function.o
-
-# target to build an object file
-Function/Function.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/funcFactory.dir/build.make CMakeFiles/funcFactory.dir/Function/Function.cpp.o
-.PHONY : Function/Function.cpp.o
-
-Function/Function.i: Function/Function.cpp.i
-
-.PHONY : Function/Function.i
-
-# target to preprocess a source file
-Function/Function.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/funcFactory.dir/build.make CMakeFiles/funcFactory.dir/Function/Function.cpp.i
-.PHONY : Function/Function.cpp.i
-
-Function/Function.s: Function/Function.cpp.s
-
-.PHONY : Function/Function.s
-
-# target to generate assembly for a file
-Function/Function.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/funcFactory.dir/build.make CMakeFiles/funcFactory.dir/Function/Function.cpp.s
-.PHONY : Function/Function.cpp.s
-
-library.o: library.cpp.o
-
-.PHONY : library.o
+.PHONY : main.o
 
 # target to build an object file
-library.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/funcFactory.dir/build.make CMakeFiles/funcFactory.dir/library.cpp.o
-.PHONY : library.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-library.i: library.cpp.i
+main.i: main.cpp.i
 
-.PHONY : library.i
+.PHONY : main.i
 
 # target to preprocess a source file
-library.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/funcFactory.dir/build.make CMakeFiles/funcFactory.dir/library.cpp.i
-.PHONY : library.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-library.s: library.cpp.s
+main.s: main.cpp.s
 
-.PHONY : library.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-library.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/funcFactory.dir/build.make CMakeFiles/funcFactory.dir/library.cpp.s
-.PHONY : library.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -205,13 +178,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... funcFactory"
-	@echo "... Function/Function.o"
-	@echo "... Function/Function.i"
-	@echo "... Function/Function.s"
-	@echo "... library.o"
-	@echo "... library.i"
-	@echo "... library.s"
+	@echo "... main"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

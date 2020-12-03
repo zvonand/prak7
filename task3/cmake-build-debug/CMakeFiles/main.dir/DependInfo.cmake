@@ -4,13 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/master/prak7/task3/Function/Function.cpp" "/home/master/prak7/task3/cmake-build-debug/CMakeFiles/task3.dir/Function/Function.cpp.o"
-  "/home/master/prak7/task3/library.cpp" "/home/master/prak7/task3/cmake-build-debug/CMakeFiles/task3.dir/library.cpp.o"
+  "/Users/zvonand/workspace/prak7/t3_exec/main.cpp" "/Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug/CMakeFiles/main.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "BOOST_ALL_NO_LIB"
+  "BOOST_PROGRAM_OPTIONS_DYN_LINK"
+  )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/include"
   )
 
 # Targets to which this target links.
