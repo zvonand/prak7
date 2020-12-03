@@ -1,0 +1,3 @@
+[submodule "task3/googletest"]
+	path = task3/googletest
+	url = git@github.com:google/googletest.git

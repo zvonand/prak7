@@ -9,4 +9,4 @@ cov.html
 diff.txt
 .idea/
 .DS_Store
-cmake-build*/
+cmake-build-debug/
