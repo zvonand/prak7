@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/zvonand/workspace/prak7/t3_exec/CustomMath.h
+/Users/zvonand/workspace/prak7/task3/CustomMath.h
 string
 -
 vector
@@ -26,13 +26,13 @@ type_traits
 tuple
 -
 
-/Users/zvonand/workspace/prak7/t3_exec/main.cpp
+/Users/zvonand/workspace/prak7/task3/main.cpp
 iostream
 -
 string
 -
 CustomMath.h
-/Users/zvonand/workspace/prak7/t3_exec/CustomMath.h
+/Users/zvonand/workspace/prak7/task3/CustomMath.h
 
 /usr/local/include/boost/assert.hpp
 boost/config.hpp

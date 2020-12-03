@@ -1,3 +1,3 @@
-/Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/zvonand/workspace/prak7/t3_exec/cmake-build-debug/CMakeFiles/main.dir
+/Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/main.dir

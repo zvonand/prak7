@@ -7,4 +7,6 @@ result.md
 cov.md
 cov.html
 diff.txt
-
+.idea/
+.DS_Store
+cmake-build*/

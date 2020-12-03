@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include "CustomMath.h"
 
 int main() {
@@ -22,7 +21,6 @@ int main() {
 
     auto div = power / poly;
     std::cout << div->toString() << " val(1): " << div->getValue(1) << " der(2): " << div->getDerivative(2) << std::endl;
-
 
     return 0;
 }

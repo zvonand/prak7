@@ -216,8 +216,8 @@ public:
                     return monoms[0].second->getDerivative(x)*monoms[1].second->getValue(x)
                     + monoms[1].second->getDerivative(x)*monoms[0].second->getValue(x);
                 case '/':
-                    return monoms[0].second->getDerivative(x)*monoms[1].second->getValue(x)
-                           - monoms[1].second->getDerivative(x)*monoms[0].second->getValue(x) /
+                    return (monoms[0].second->getDerivative(x)*monoms[1].second->getValue(x)
+                           - monoms[1].second->getDerivative(x)*monoms[0].second->getValue(x)) /
                             std::pow(monoms[1].second->getValue(x), 2);
                 default:
                     throw std::logic_error(std::string("Operation not supported") + std::to_string(monoms[1].first));
@@ -227,6 +227,7 @@ public:
 };
 
 std::shared_ptr<TSuper> operator+(const std::shared_ptr<TFunction>& a, const std::shared_ptr<TFunction>& b) {
+
     auto ret = std::make_shared<TSuper>();
     ret->monoms.emplace_back(std::make_pair('+', a));
     ret->monoms.emplace_back(std::make_pair('+', b));
@@ -255,6 +256,43 @@ std::shared_ptr<TSuper> operator/(const std::shared_ptr<TFunction>& a, const std
 }
 
 
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator+(const std::shared_ptr<TFunction>& a, const T& b) {
+    throw std::logic_error("Invalid operand type");
+}
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator+(const T& b, const std::shared_ptr<TFunction>& a) {
+    throw std::logic_error("Invalid operand type");
+}
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator-(const std::shared_ptr<TFunction>& a, const T& b) {
+    throw std::logic_error("Invalid operand type");
+}
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator-(const T& b, const std::shared_ptr<TFunction>& a) {
+    throw std::logic_error("Invalid operand type");
+}
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator*(const std::shared_ptr<TFunction>& a, const T& b) {
+    throw std::logic_error("Invalid operand type");
+}
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator*(const T& b, const std::shared_ptr<TFunction>& a) {
+    throw std::logic_error("Invalid operand type");
+}
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator/(const std::shared_ptr<TFunction>& a, const T& b) {
+    throw std::logic_error("Invalid operand type");
+}
+template <class T>
+typename std::enable_if<!std::is_convertible<std::shared_ptr<TFunction>, T>::value, std::shared_ptr<TSuper>>::type operator/(const T& b, const std::shared_ptr<TFunction>& a) {
+    throw std::logic_error("Invalid operand type");
+}
+
+
+
+
+
 class FuncFactory {
 public:
     FuncFactory() = default;
@@ -277,6 +315,16 @@ public:
     }
 
 };
+
+double GradientRoot(TFunction& f, double x0 = 0, int it = 1000) {
+    double fx0 = f.getValue(x0);
+    for (int i = 1; i <= it && std::abs(fx0) > 1e-5; ++i) {
+        double alpha = 0.01;
+        x0 = x0 + alpha * ((fx0 > 0) ? -f.getDerivative(x0) : f.getDerivative(x0));
+        fx0 = f.getValue(x0);
+    }
+    return x0;
+}
 
 
 
