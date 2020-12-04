@@ -48,7 +48,7 @@ public:
             if (a == 1) {
                 return pp == "" ? "1" : pp;
             } else {
-                return str(boost::format("%1%%2%") % a % pp);
+                return str(pp == "" ? boost::format("%1%") % a : boost::format("%1%*%2%") % a % pp);
             }
         } else {
             return std::string("0");
@@ -79,7 +79,7 @@ class TConst : public TPower {
 public:
     TConst(const std::initializer_list<double>& val) : TPower({*val.begin(), 0}) {};
     std::string toString() const override {
-        return std::to_string(a);
+        return str(boost::format("%1%") % a);
     };
 };
 
@@ -100,18 +100,22 @@ public:
 
     std::string toString() const override {
         if (a) {
-            return a != 1 ? str(boost::format("%1%e^%2%") % a % n) : str(boost::format("e^%1%") % n);
+            if (n) {
+                return a != 1 ? str(boost::format("%1%*e^%2%x") % a % n) : str(boost::format("e^%1%x") % n);
+            } else {
+                return str(boost::format("%1%") % a);
+            }
         } else {
             return std::string("0");
         }
     }
 
     double getValue(double x) const override {
-        return a * std::exp (n * x);
+        return a * std::exp(n * x);
     }
 
     double getDerivative(double x) const override {
-        return n * a * std::exp (n * x);
+        return n * a * std::exp(n * x);
     }
 
 };
@@ -158,11 +162,14 @@ public:
             auto ret = std::string();
             bool first = true;
             for (const auto& m : monoms) {
-                if (!first) {
-                    ret += m.first;
+                auto v = m.second->toString();
+                if (v != std::string("") && v != std::string("0")) {
+                    if (!first) {
+                        ret += std::string(" ") + m.first + std::string(" ");
+                    }
+                    ret += std::string("(") + m.second->toString() + ")";
+                    first = false;
                 }
-                ret += std::string(" (") + m.second->toString() + ") ";
-                first = false;
             }
             return ret;
         } else {
@@ -316,12 +323,12 @@ public:
 
 };
 
-double GradientRoot(TFunction& f, double x0 = 0, int it = 1000) {
-    double fx0 = f.getValue(x0);
+double GradientRoot(std::shared_ptr<TFunction>& f, double x0 = 0, int it = 10000) {
+    double fx0 = f->getValue(x0);
     for (int i = 1; i <= it && std::abs(fx0) > 1e-5; ++i) {
-        double alpha = 0.01;
-        x0 = x0 + alpha * ((fx0 > 0) ? -f.getDerivative(x0) : f.getDerivative(x0));
-        fx0 = f.getValue(x0);
+        double alpha = 0.00001;
+        x0 = x0 + alpha * ((fx0 > 0) ? -f->getDerivative(x0) : f->getDerivative(x0));
+        fx0 = f->getValue(x0);
     }
     return x0;
 }

@@ -188,19 +188,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named regression
-
-# Build rule for target.
-regression: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 regression
-.PHONY : regression
-
-# fast build rule for target.
-regression/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression.dir/build.make CMakeFiles/regression.dir/build
-.PHONY : regression/fast
-
-#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -212,6 +199,19 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named unittests
+
+# Build rule for target.
+unittests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unittests
+.PHONY : unittests
+
+# fast build rule for target.
+unittests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unittests.dir/build.make CMakeFiles/unittests.dir/build
+.PHONY : unittests/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -292,32 +292,32 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-regression.o: regression.cpp.o
+unittests.o: unittests.cpp.o
 
-.PHONY : regression.o
+.PHONY : unittests.o
 
 # target to build an object file
-regression.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression.dir/build.make CMakeFiles/regression.dir/regression.cpp.o
-.PHONY : regression.cpp.o
+unittests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unittests.dir/build.make CMakeFiles/unittests.dir/unittests.cpp.o
+.PHONY : unittests.cpp.o
 
-regression.i: regression.cpp.i
+unittests.i: unittests.cpp.i
 
-.PHONY : regression.i
+.PHONY : unittests.i
 
 # target to preprocess a source file
-regression.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression.dir/build.make CMakeFiles/regression.dir/regression.cpp.i
-.PHONY : regression.cpp.i
+unittests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unittests.dir/build.make CMakeFiles/unittests.dir/unittests.cpp.i
+.PHONY : unittests.cpp.i
 
-regression.s: regression.cpp.s
+unittests.s: unittests.cpp.s
 
-.PHONY : regression.s
+.PHONY : unittests.s
 
 # target to generate assembly for a file
-regression.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression.dir/build.make CMakeFiles/regression.dir/regression.cpp.s
-.PHONY : regression.cpp.s
+unittests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unittests.dir/build.make CMakeFiles/unittests.dir/unittests.cpp.s
+.PHONY : unittests.cpp.s
 
 # Help Target
 help:
@@ -337,13 +337,13 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... main"
-	@echo "... regression"
+	@echo "... unittests"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... regression.o"
-	@echo "... regression.i"
-	@echo "... regression.s"
+	@echo "... unittests.o"
+	@echo "... unittests.i"
+	@echo "... unittests.s"
 .PHONY : help
 
 

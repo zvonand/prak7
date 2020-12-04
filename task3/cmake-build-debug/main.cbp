@@ -57,52 +57,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="regression">
-				<Option output="/Users/zvonand/workspace/prak7/task3/cmake-build-debug/regression" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/zvonand/workspace/prak7/task3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest/include"/>
-					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 regression"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="regression/fast">
-				<Option output="/Users/zvonand/workspace/prak7/task3/cmake-build-debug/regression" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/zvonand/workspace/prak7/task3/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest/include"/>
-					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 regression/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="test">
 				<Option working_dir="/Users/zvonand/workspace/prak7/task3/cmake-build-debug"/>
 				<Option type="4"/>
@@ -178,6 +132,52 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unittests">
+				<Option output="/Users/zvonand/workspace/prak7/task3/cmake-build-debug/unittests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zvonand/workspace/prak7/task3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest/include"/>
+					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 unittests"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unittests/fast">
+				<Option output="/Users/zvonand/workspace/prak7/task3/cmake-build-debug/unittests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zvonand/workspace/prak7/task3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest/include"/>
+					<Add directory="/Users/zvonand/workspace/prak7/task3/googletest/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 unittests/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zvonand/workspace/prak7/task3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -394,8 +394,8 @@
 		<Unit filename="/Users/zvonand/workspace/prak7/task3/main.cpp">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/Users/zvonand/workspace/prak7/task3/regression.cpp">
-			<Option target="regression"/>
+		<Unit filename="/Users/zvonand/workspace/prak7/task3/unittests.cpp">
+			<Option target="unittests"/>
 		</Unit>
 		<Unit filename="/Users/zvonand/workspace/prak7/task3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

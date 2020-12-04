@@ -22,5 +22,9 @@ int main() {
     auto div = power / poly;
     std::cout << div->toString() << " val(1): " << div->getValue(1) << " der(2): " << div->getDerivative(2) << std::endl;
 
+    auto exp = ff.Create("exp", {2, 3});
+    auto ddd = power + exp;
+    std::cout << ddd->toString() << " val(1): " << ddd->getValue(1) << " der(2): " << ddd->getDerivative(2) << std::endl;
+
     return 0;
 }

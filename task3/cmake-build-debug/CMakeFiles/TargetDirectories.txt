@@ -2,11 +2,11 @@
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/install.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/list_install_components.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/install/local.dir
-/Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/regression.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/test.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/main.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zvonand/workspace/prak7/task3/cmake-build-debug/CMakeFiles/unittests.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/googletest/CMakeFiles/install/strip.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/googletest/CMakeFiles/install.dir
 /Users/zvonand/workspace/prak7/task3/cmake-build-debug/googletest/CMakeFiles/list_install_components.dir
