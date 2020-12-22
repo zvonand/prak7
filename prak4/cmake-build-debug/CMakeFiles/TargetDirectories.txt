@@ -1,0 +1,3 @@
+/Users/zvonand/workspace/prak7/prak4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/zvonand/workspace/prak7/prak4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zvonand/workspace/prak7/prak4/cmake-build-debug/CMakeFiles/prak4.dir
