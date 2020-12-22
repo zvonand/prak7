@@ -6,7 +6,7 @@ class CustomMath : public::testing::Test {
 protected:
     const double prec = 10e-2;
     std::shared_ptr<TFunction> exponential_1, exponential_2, ident, power_func_1,
-            power_func_2, power_func_3, power_func_4, constant, polynom, sum, diff, prod, quot, db1, db2;
+            power_func_2, power_func_3, power_func_4, constant, polynom, sum, diff, prod, quot, db1, db2, custom, ex, sq, fin, x2;
 
     void SetUp(){
         auto ff = FuncFactory();
@@ -26,6 +26,13 @@ protected:
         quot = power_func_4 / power_func_2;
         db1 = diff + quot;
         db2 = sum - prod;
+
+        custom = ff.Create("polynom", {0,2,1});
+
+        ex = ff.Create("exp", {1, 1});
+        sq = ff.Create("const", {std::exp(2)});
+        fin = ex - sq;
+
     }
 
     void TearDown(){};
@@ -57,6 +64,7 @@ TEST_F(CustomMath, Get_Value_Test) {
     ASSERT_NEAR(power_func_3->getValue(11), 4, prec);
     ASSERT_NEAR(power_func_4->getValue(2), -128, prec);
     ASSERT_NEAR(polynom->getValue(2), 34, prec);
+    ASSERT_NEAR(ex->getValue(1), std::exp(1), prec);
 };
 
 TEST_F(CustomMath, Get_Derivative_Test) {
@@ -70,6 +78,7 @@ TEST_F(CustomMath, Get_Derivative_Test) {
     ASSERT_NEAR(power_func_3->getDerivative(11), 0, prec);
     ASSERT_NEAR(power_func_4->getDerivative(2), -320, prec);
     ASSERT_NEAR(polynom->getDerivative(2), 45, prec);
+    ASSERT_NEAR(ex->getDerivative(1), std::exp(1), prec);
 };
 
 
@@ -96,4 +105,5 @@ TEST_F(CustomMath, Gradient_Descent_Test) {
     ASSERT_NEAR(GradientRoot(diff, -2, 100000), -1.779, 0.01);
     ASSERT_NEAR(GradientRoot(db2, -0.5, 100000), -0.4355, 0.1);
     ASSERT_NEAR(GradientRoot(polynom, 0.5, 100000), 0, 0.01);
+    ASSERT_NEAR(GradientRoot(fin, 1, 100000), 2, 0.1);
 }
